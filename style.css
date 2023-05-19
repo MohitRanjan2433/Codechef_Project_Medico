@@ -1,112 +1,316 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Silkscreen&display=swap');
+/* :root {
+    --clr-primary: #8e74ff;
+    --clr-prim-hover: #9B85FF;
+    --clr-btn-focus:#e4e4e4;
+    --noto: "Noto Serif",Georgia,serif;
+    --lato: "Lato","Helvetica Neue",Helvetica,Arial,sans-serif;
+    
+} */
 
 * {
-    margin: 0;
-    padding: 0;
+    margin: 5px;
+    padding: 5px;
     box-sizing: border-box;
+    font-family: var(--lato);
+    letter-spacing: 0.3px;
+
 }
 
-body {
-    font-family: 'Lato', sans-serif;
+h1,h2,h3,h4,h5,h6 {
+    color: #1f1f1f;
 }
 
-.outer-box {
-    width: 100vw;
-    height: 100vh;
-    background: linear-gradient(to top left, #3ed8ff, #a8f5ff);
+.main {
+    display: inline-flex;
+    box-shadow:  2px 15px 10px rgba(0,0,0,0.2);
+    border-radius: 25px;
+    width: 600px;
 }
 
-.inner-box {
-    width: 400px;
-    margin: 0 auto;
-    position: relative;
-    top: 40%;
-    transform: translateY(-50%);
+.logo h2 {
+    padding: 15px;
+    color: #5d58ed;
+}
+
+.signin {
+    width: 320px;
+    background: #5d58ed;
+    color: #fff;
+    padding: 15px;
+    text-align: center;
+    border-radius: 20px;
+    width: auto;
+    height: auto;
+}
+
+.login-form label {
+    float: left;
+    margin: 25px 0px 10px 0px;
+}
+
+label {
+    font-size: 14px;
+}
+
+.login-form input , .login-form button {
+    width: calc(100% - 20px);
+    height: 35px;
+    color: #fff;
+    background-color: #3b3e87;
+    outline: none;
+    border: none;
+    border-radius: 15px;
+    padding: 10px;
+    margin: 0 20px;
+}
+
+.login-form input[type]::placeholder {
+    color: #fff;
+}
+
+.login-form a {
+    color: #fff;
+    font-size: 10px;
+    margin: 15px 25px;
+}
+
+.login-form input[type*="submit"] {
+    background: #ed0c2e;
+    font-size: 16px;
+    padding: 1px;
+    margin: 10px 0 10px 20px;
+    cursor: pointer;
+}
+.login-form input[type*="submit"]:hover {
+    transition: .5s;
+    background: #cf2b44;
+}
+
+.login-form {
+    margin: 50px ;
+}
+
+.errpass {
+    color: red;
+}
+
+.head {
+    background-image: url(../imgs/head.jpg);
+    background-position: center;
+    flex-direction: column;
+    padding: 65px 30px;
+    justify-content: center;
+    align-items: center;
+}
+
+.head h1 {
+    font-size: 3em;
+    margin-bottom: 20px;
+}
+
+/* homepage */
+
+.get-med-form {
+    width: 100%;
+    justify-content: center;
+    max-width: 720px;
+}
+
+.get-med-form > input {
+    border: none;
+    border-radius: 10px;
+    padding: 20px;
+    font-size: 1.1em;
+}
+
+.get-med {
+    flex: 1 1 0%;
+    margin-right: 20px;
+    border: 1px solid #111 !important;
+}
+
+.get-med-form > input[type*="submit"] {
     padding: 20px 40px;
-    /* background-color: #ffffff09; */
-    background: linear-gradient(to top left, #ffffffff, #ffffff33);
-    backdrop-filter: blur(8px);
-    border-radius: 8px;
-    box-shadow: 2px 2px 5px #2773a5;
-    /* border: 2px solid black; */
-    z-index: 2;
+    cursor: pointer;
+    background: #8e74ff;
+    color: #fff;
+    transition: .5s all ease-out;
 }
 
-.signup-header h1 {
-    font-size: 2.5rem;
-    color: #212121;
+.get-med-form > input[type*="submit"]:hover {
+    background: #9B85FF;
 }
 
-.signup-header p {
-    font-size: 0.95rem;
-    color: #555;
-    margin-top: 5px;
+.site-save {
+    background-color: #fff;
+    padding: 60px 40px;
 }
 
-.signup-body {
+.pharm-row {
+    padding-top: 20px;
+    width: 100%;
+}
+
+.site-pharm {
+    flex: 25%;
+    background-color: #fff;
+    box-shadow: 0 0 5px 1px #ededed;
+    border-radius: 10px;
+    margin: 25px;
+    padding: 20px;
+}
+
+hr {
+    --clr: #c4c4c4;
+    border-color: var(--clr);
+    background-color: var(--clr);
+    color: var(--clr);
+    border-top: 1px;
+    height: 1px;
+    margin: 15px 0;
+}
+
+.pharm-p {
+    font-size: 1.15em;
+    font-weight: bolder;
+    margin-bottom: 15px;
+}
+
+.site-pharm ul {
+    padding: 0 20px;
     margin: 20px 0;
 }
 
-.signup-body p {
-    margin: 10px 0;
+.site-pharm ul li{
+    margin: 5px 0;
+    color: #434343;
 }
 
-.signup-body p label {
+.site-pharm a, .coms a {
     display: block;
+    text-align: center;
+    font-size: 1.1em;
+    font-weight: 600;
+    text-decoration: none;
+    width: 100%;
+    border: 1px solid #8e74ff;
+    color: #8e74ff;
+    border-radius: 10px;
+    padding: 10px 20px;
+    transition: .5s color ease-out, .3s background-color ease-out;
+}
+
+.site-pharm a:hover, .coms a:hover {
+    background-color: #9B85FF;
+    color: #f4f4f4;
+}
+
+.common {
+    background-color: #6aff6a;
+    padding: 25px;
+}
+
+.common h2 {
+    margin: 10px 25px 0;
+}
+
+.coms {
+    flex: 30%;
+    margin: 25px;
+}
+
+.com-img {
+    border-radius: 10px;
+    width: 100%;
+}
+
+.coms hr {
+    --clr: #8e74ff;
+    border-color: var(--clr);
+    background-color: var(--clr);
+    color: var(--clr);
+}
+
+.coms p:not(.common-desc) {
+    color: #464646;
+    margin-top: 10px;
+    font-size: 1.2em;
+    text-align: center;
     font-weight: bold;
 }
 
-.signup-body p input {
+.common-desc {
+    font-size: 1.1em;
+    text-align: left;
+    color: #464646;
+    margin-bottom: 10px;
+    padding: 10px 0;
+}
+
+.footer {
+    background: #6aff6a;
+    border-top: 1px solid #2be52b;
+    color: #fff;
+    text-align: center;
+    padding: 25px 0;
+}
+
+
+@media screen and (max-width: 992px) {
+    .get-med-form{
+        flex-direction: column !important;
+    }
+
+    .head h1 {
+        font-size: 2.5em;
+    }
+
+    .get-med {
+        margin: 0 0 10px;
+    }
+    
+    .pharm-row {
+        flex-direction: column !important;
+    }
+
+    .pharm-row > div:nth-child(even) {
+        display: none;
+    }
+
+    .com-row {
+        flex-direction: column !important;
+    }
+
+    .logo{
+        display: none;
+    }
+    
+}
+
+@media screen and (max-width: 568px) {
+    .get-med-form > input[type*="submit"] {
+        display: none;
+    }
+}
+
+a[title*="Hosted on free web hosting 000webhost.com. Host your own website for FREE."] {
+    display: none;
+}
+
+.login-form .name-input{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.login-form .name-input label {
+    margin-bottom: 5px;
+  }
+  
+  .login-form .name-input input[type="text"] {
     width: 100%;
     padding: 10px;
-    border: 2px solid #cccc;
+    border: 1px solid #ccc;
     border-radius: 4px;
-    font-size: 1rem;
-    margin-top: 4px;
-}
-
-.signup-body p input[type="submit"] {
-    background-color: #3498db;
-    border: none;
-    color: white;
-    cursor: pointer;
-}
-
-.signup-body p input[type="submit"]:hover {
-    background-color: #2773a5;
-}
-
-.signup-footer p {
-    color: #555;
-    text-align: center;
-}
-
-.signup-footer p a {
-    color: #2773a5;
-}
-
-.circle {
-    width: 200px;
-    height: 200px;
-    border-radius: 100px;
-    background: linear-gradient(to top right, #ffffff33, #ffffffff);
-    position: absolute;
-}
-
-.c1 {
-    top: 100px;
-    left: 30%;
-}
-
-.c2 {
-    bottom: 200px;
-    right: 40%;
-}
-
-h1{
-    text-align: center;
-}
-
-form{
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-}
+    box-sizing: border-box;
+  }
